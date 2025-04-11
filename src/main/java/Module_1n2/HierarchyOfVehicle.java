@@ -101,6 +101,13 @@ public class HierarchyOfVehicle {
         helicopter.launchEngine();
         helicopter.stopEngine();
 
+        // катер
+        Cargo boatCargo = new Cargo(500);
+        Propeller[] boatPropellers = { new Propeller(" Main motor")};
+        Boat boat = new Boat("red",300,2000,"Yamaha",70,boatCargo,boatPropellers);
+        System.out.println("\n" + boat);
+
+        //
 
     }
     
@@ -278,6 +285,141 @@ class Airplane extends Vehicle implements HasWheels, HasPropeller, HasWings, Has
         }
 
     }
+
+    class Boat extends Vehicle implements HasPropeller, HasCargo {
+        private final String model;
+        private final int maxSpeed;
+        private final Cargo boatCargo;
+        private final Propeller[] propellers;
+
+        Boat(String color, int horsePower, int weight, String model, int maxSpeed,
+             Cargo boatCargo, Propeller[] propellers) {
+            super(color, horsePower, weight);
+            this.model = model;
+            this.maxSpeed = maxSpeed;
+            this.boatCargo = boatCargo;
+            this.propellers = propellers;
+        }
+
+        @Override
+        public Cargo getCargo() {
+            return this.boatCargo;
+        }
+
+        @Override
+        public Propeller[] getPropellers() {
+            return this.propellers;
+        }
+
+        @Override
+        public void launchEngine() {
+            System.out.println("Launch boat Engine!");
+        }
+
+        @Override
+        public void stopEngine() {
+            System.out.println("Stop boat Engine!");
+        }
+
+        @Override
+        public String toString() {
+            return "Boat{" +
+                    "model='" + model + '\'' +
+                    ", maxSpeed=" + maxSpeed +
+                    ", boatCargo=" + getCargo().getCargoWeight() +
+                    ", propellers=" + propellers.length +
+                    '}';
+        }
+}
+// класс танкер
+class  Tanker extends Vehicle implements HasPropeller, HasCargo {
+    private final String model;
+
+    public Tanker(String color, int horsePower, int weight, String model) {
+        super(color, horsePower, weight);
+        this.model = model;
+    }
+
+// интерфейс
+    @Override
+    public Cargo getCargo() {
+        return null;
+    }
+
+    @Override
+    public Propeller[] getPropellers() {
+        return new Propeller[0];
+    }
+// методы родителя
+    @Override
+    public void launchEngine() {
+
+    }
+
+    @Override
+    public void stopEngine() {
+
+    }
+
+}
+// класс грузовик
+class Truck extends Vehicle implements HasWheels, HasCargo {
+    private final String model;
+
+    public Truck(String color, int horsePower, int weight, String model) {
+        super(color, horsePower, weight);
+        this.model = model;
+    }
+
+    @Override
+    public Cargo getCargo() {
+        return null;
+    }
+
+    @Override
+    public Wheel[] getWheels() {
+        return new Wheel[0];
+    }
+
+    @Override
+    public void launchEngine() {
+
+    }
+
+    @Override
+    public void stopEngine() {
+
+    }
+}
+// класс такси
+class Taxi extends Vehicle implements HasWheels, HasCargo {
+    private final String model;
+
+    public Taxi(String color, int horsePower, int weight, String model) {
+        super(color, horsePower, weight);
+        this.model = model;
+    }
+
+    @Override
+    public Cargo getCargo() {
+        return null;
+    }
+
+    @Override
+    public Wheel[] getWheels() {
+        return new Wheel[0];
+    }
+
+    @Override
+    public void launchEngine() {
+
+    }
+
+    @Override
+    public void stopEngine() {
+
+    }
+}
 
 
 
