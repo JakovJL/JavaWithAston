@@ -1,4 +1,4 @@
-package Module_1;
+package Module_1n1;
 
 // Интерфейсы для всех животных
 interface HasSpine {
