@@ -1,6 +1,6 @@
 package Module_1n2;
 
-
+// интерфейсы
 interface HasWheels {
     Wheel[] getWheels();
 }
@@ -17,6 +17,7 @@ interface HasCargo {
     Cargo getCargo();
 }
 
+// дополнительные классы
 class Wheel {
     private final int wheelCount;
 
@@ -71,6 +72,8 @@ class Wing {
         return rangeOfWing;
     }
 }
+
+
 
 public class HierarchyOfVehicle {
     public static void main(String[] args) {
@@ -368,7 +371,7 @@ class Tanker extends Vehicle implements HasPropeller, HasCargo {
         this.model = model;
     }
 
-    // интерфейс
+    // методы интерфейса
     @Override
     public Cargo getCargo() {
         return null;
