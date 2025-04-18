@@ -1,6 +1,5 @@
 package Module_2_Task_1;
 
-
 public class MyArrayList<T> {
 
     private static final int DEFAULT_CAPACITY = 10;
@@ -21,6 +20,7 @@ public class MyArrayList<T> {
             System.out.println("Illegal initial capacity");
         }
     }
+
 
     public int size() {
         return size;
@@ -95,6 +95,18 @@ public class MyArrayList<T> {
         size--;
         return oldValue;
     }
+
+    public boolean remove(T element) {
+        for (int i = 0; i < size; i++) {
+            if (element == array[i]) {
+                remove(i);
+            }
+        }
+        return true;
+    }
+
+
+
     public boolean contains(T element) {
         for (int i = 0; i < size; i++) {
             if (array[i].equals(element)) {
@@ -102,6 +114,12 @@ public class MyArrayList<T> {
             }
         }
         return false;
+    }
+
+    public void clear() {
+       array = new Object[DEFAULT_CAPACITY];
+        size = 0;
+
     }
 
 
@@ -119,4 +137,5 @@ public class MyArrayList<T> {
 
         return str.toString();
     }
+
 }
