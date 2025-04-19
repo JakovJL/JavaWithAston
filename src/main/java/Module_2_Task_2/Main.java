@@ -1,13 +1,11 @@
 package Module_2_Task_2;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import java.util.stream.Stream;
 
 
 public class Main {
     public static void main(String[] args) {
+        // comment
 
         Stream.of(
                         new Student("Ivan", 19) {{
