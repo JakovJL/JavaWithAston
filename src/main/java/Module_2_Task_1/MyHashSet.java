@@ -1,5 +1,6 @@
 package Module_2_Task_1;
 
+
 public class MyHashSet<T> {
     private static final int DEFAULT_CAPACITY = 16;
     private MyArrayList<T>[] buckets;

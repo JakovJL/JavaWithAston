@@ -3,6 +3,7 @@ package Module_2_Task_2;
 
 import java.util.Objects;
 
+
 class Book {
     private String title;
     private int pageCount;
@@ -50,3 +51,4 @@ class Book {
         return Objects.hash(title, pageCount, yearPublished);
     }
 }
+

@@ -1,6 +1,7 @@
 package Module_2_Task_1;
 
-public class MyArrayList<T> {
+
+class MyArrayList<T> {
 
     private static final int DEFAULT_CAPACITY = 10;
     private static final float GROWTH_FACTOR = 1.5f;
@@ -64,6 +65,15 @@ public class MyArrayList<T> {
         }
     }
 
+    public void addAll(MyArrayList<T> myArrayList2) {
+        if (myArrayList2 != null) {
+            ensureCapacity(size + myArrayList2.size());
+            for (int i = 0; i < myArrayList2.size(); i++) {
+                this.add(myArrayList2.get(i));
+            }
+        }
+    }
+
     private void ensureCapacity(int minCapacity) {
 
         if (minCapacity > array.length) {
@@ -81,6 +91,9 @@ public class MyArrayList<T> {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
+        return (T) array[index];
+    }
+    public T getMyArrayList(int index) {
         return (T) array[index];
     }
 
@@ -117,7 +130,7 @@ public class MyArrayList<T> {
     }
 
     public void clear() {
-       array = new Object[DEFAULT_CAPACITY];
+        array = new Object[DEFAULT_CAPACITY];
         size = 0;
 
     }
@@ -137,5 +150,6 @@ public class MyArrayList<T> {
 
         return str.toString();
     }
+
 
 }

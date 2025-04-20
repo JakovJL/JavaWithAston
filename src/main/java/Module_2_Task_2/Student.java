@@ -4,7 +4,7 @@ package Module_2_Task_2;
 import java.util.ArrayList;
 import java.util.List;
 
- public class Student {
+class Student {
     private String name;
     private int age;
     private List<Book> books;
