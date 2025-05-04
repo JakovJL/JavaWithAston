@@ -46,8 +46,8 @@ public class ReadWrite {
 
     /**
      * @param append флаг:
-     *                true - добавить в конец файла,
-     *                false - перезаписать файл
+     *               true - добавить в конец файла,
+     *               false - перезаписать файл
      **/
     public static void writeToFile(String fileName, String content, boolean append) throws FileWriteException {
         try (RandomAccessFile file = new RandomAccessFile(fileName, "rw");
